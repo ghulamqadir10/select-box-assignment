@@ -226,6 +226,7 @@ selectBrand.addEventListener(`change`, function (event) {
     // selectModel.innerHTML = `<optiom value="" >--select model--</option>`; if we use this statment the empty select option will not show
 
     if (brandvalue) {
+        selectModel.innerHtml=``;
         let models = mobileBrands[brandvalue].Models;
         console.log(models)
         for (let model in models) {
@@ -235,9 +236,10 @@ selectBrand.addEventListener(`change`, function (event) {
             selectModel.appendChild(option)
         }
         selectModel.disabled = false;
+        selectModel.innerHTML=``;
     } else {
         selectModel.disabled = true;
-        selectModel.innerHTML = ``
+        // selectModel.innerHTML = ``
     }
 
     selectModel.addEventListener(`change`, function (event) {
